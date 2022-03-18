@@ -1,0 +1,155 @@
+.coloredBack {
+    background-color: var(--main);
+}
+.mealSection {
+    background-color: white;
+    border-top-right-radius: 200px;
+}
+.mealSectionTitle {
+    color: var(--main);
+}
+.productGrid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 380px));
+    border-top-right-radius: 500px;
+}
+.mealContainer {
+    display: flex;
+    border: 1px solid var(--main);
+    border-radius: 5px;
+    width: 95%;
+    height: 77%;
+    margin: 10px 0;
+    position: relative;
+    overflow: hidden;
+    background-color: white;
+}
+
+.mealImage {
+    width: 200px;
+    height: 100%;
+    display: flex;
+    background-color: #eee;
+}
+.mealImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.mealContent {
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+    width: 70%;
+}
+.mealName {
+    color: var(--main);
+    font-weight: bold;
+}
+
+.mealCategory {
+    position: absolute;
+    background-color: var(--main);
+    color: white;
+    width: 223px;
+    margin: 0;
+    right: -50px;
+    bottom: 23px;
+    transform: rotate(-45deg);
+    display: flex;
+    justify-content: center;
+    padding-left: 25px;
+}
+.mealContainer svg {
+    fill: var(--main);
+    position: absolute;
+    bottom: -35px;
+    right: 5px;
+    font-size: 2.5rem;
+    transition: all 0.5s;
+}
+.mealContainer:hover svg {
+    bottom: -5px;
+}
+.mealCategoryBanner {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main);
+    padding-top: 85px;
+    padding-bottom: 20px;
+}
+.mealCategoryBanner img {
+    border-radius: 5px;
+    max-height: 200px;
+}
+.mealCategoryBanner h3 {
+    color: white;
+    font-size: 2rem;
+    margin: 1px;
+    text-align: center;
+}
+
+.topMelasSection {
+    background-color: var(--main);
+    border-top: 1px solid var(--light1);
+}
+.topMealsGrid {
+    display: flex;
+    flex-wrap: wrap;
+}
+.topMelasSectionTitle,
+.topMelasSectionTitle svg {
+    color: white;
+    fill: white;
+}
+.topMelasSection .mealContainer {
+    flex-shrink: 0;
+    width: 45%;
+    height: 200px;
+    margin: 5px;
+    border-color: var(--dark);
+}
+
+.topMelasSection .mealContainer p {
+    color: var(--dark);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.topMelasSection .mealContainer .mealContent {
+    color: white;
+    width: 70%;
+}
+.topMelasSection .mealImage {
+    width: 250px;
+}
+.topMelasSection .mealContainer img {
+    width: 100%;
+}
+.topMelasSection .mealContainer .mealCategory {
+    background-color: var(--main);
+}
+@media only screen and (max-width: 1000px) {
+    .topMelasSection .mealContainer .mealName {
+        font-size: 1rem;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .topMelasSection .mealContainer {
+        width: 100%;
+        height: 150px;
+    }
+
+    .productGrid {
+        display: flex;
+        flex-direction: column;
+    }
+    .mealSection {
+        border-top-right-radius: 0;
+    }
+}

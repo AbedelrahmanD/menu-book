@@ -1,0 +1,71 @@
+.categorySection {
+    background-color: var(--main);
+}
+.categorySectionTitle,
+.categorySectionTitle svg {
+    color: white;
+    fill: white;
+}
+
+.categoryGrid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
+    padding: 10px 0;
+}
+.categoryContainer {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 95%;
+    max-width: 250px;
+    height: 170px;
+    border: 1px solid var(--primary);
+    border-radius: 5px;
+    position: relative;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.categoryContainer:hover {
+    box-shadow: 5px 5px 1px var(--dark);
+    transform: rotateZ(2deg);
+}
+.categoryContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.categoryContainer .overlay {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--light1);
+}
+.categoryContainer h3 {
+    margin: auto;
+    font-size: 1.5rem;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 1000px) {
+    .categoryGrid {
+        grid-template-columns: repeat(3, minmax(200px, 300px));
+        padding: 10px 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .categoryGrid {
+        grid-template-columns: repeat(2, minmax(200px, 250px));
+    }
+}

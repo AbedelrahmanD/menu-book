@@ -1,0 +1,248 @@
+:root {
+    --light1: hsl(262deg 52% 67% / 34%);
+    --light2: hsl(262deg 52% 67% / 61%);
+    --dark: #1a2040;
+    --button: #212a4b;
+    --main: #363883;
+    --secondary: #c16d76;
+}
+::selection {
+    color: var(--main);
+    background-color: var(--secondary);
+}
+html {
+    scroll-behavior: smooth;
+}
+
+/* latin-ext */
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url(../fonts/roboto.woff2) format("woff2");
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+        U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: "Roboto", sans-serif;
+    animation: 1s fadeIn forwards;
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+* {
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+}
+.commonGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
+    margin: auto;
+    max-width: 1500px;
+    place-content: center;
+    place-items: center;
+    width: 95%;
+}
+.cmButton,
+.cmOutlineButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    color: white;
+    font-weight: bold;
+    padding: 15px;
+    cursor: pointer;
+    width: 250px;
+    transition: all 0.2s;
+}
+.cmButton {
+    background-color: var(--button);
+    border: 1px solid var(--button);
+}
+.cmOutlineButton {
+    border: 1px solid white;
+    background-color: transparent;
+}
+.cmButton:hover,
+.cmOutlineButton:hover {
+    box-shadow: 1px 1px 15px var(--secondary);
+    transform: translateY(-2px);
+}
+
+.commonSectionTitle {
+    margin: 0;
+    font-size: 3rem;
+    width: 90%;
+    max-width: 1500px;
+    margin: auto;
+}
+.commonSectionTitle svg {
+    width: 30px;
+    height: 30px;
+    fill: var(--main);
+}
+
+nav.flex.items-center.justify-between {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex.justify-between.flex-1.sm\:hidden {
+    display: none;
+}
+span.relative.z-0.inline-flex.shadow-sm.rounded-md {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+svg.w-5.h-5 {
+    width: 20px;
+}
+nav[role="navigation"] svg,
+nav[role="navigation"] a[rel="next"],
+nav[role="navigation"] a[rel="prev"],
+p.text-sm.text-gray-700.leading-5 {
+    display: none;
+}
+nav[role="navigation"] a,
+nav[role="navigation"] span[aria-current="page"] {
+    flex-shrink: 0;
+    background-color: var(--main);
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 100px;
+    margin: 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav[role="navigation"] span[aria-current="page"] {
+    background-color: var(--secondary);
+}
+.flexAlways[style*="display: block"] {
+    display: flex !important;
+}
+.searchForm {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.733);
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    overflow: auto;
+}
+.closeForm,
+.searchContainer {
+    display: flex;
+    justify-content: center;
+    width: 85%;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+.closeForm svg {
+    width: 50px;
+    height: 50px;
+    fill: white;
+}
+.searchContainer * {
+    border: none;
+    padding: 5px;
+    width: 100%;
+    outline: none;
+}
+.searchContainer input {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.searchContainer button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main);
+    color: white;
+    width: 70px;
+    cursor: pointer;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.searchContainer button svg{
+    fill:white;
+    width:30px;
+    height:30px;
+}
+.suggestedMealsTitle {
+    margin-top: 30px;
+    margin-bottom: 0;
+    color: white;
+    font-size: 2rem;
+}
+.suggestedMealsTitle i {
+    color: var(--secondary);
+}
+.suggestionContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 380px));
+    place-content: center;
+    place-items: center;
+    width: 100%;
+    max-width: 1500px;
+}
+.suggestionContainer .mealContainer {
+    margin: 10px;
+}
+.closeForm {
+    position: absolute;
+    right: 0px;
+    left: 0;
+    top: 10px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+    margin: auto;
+}
+.notFound{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    background-color:var(--main);
+    color:white;
+    max-width:500px;
+    width:95%;
+    margin:auto;
+    border-radius:5px;
+    font-size:2rem;
+}
+
+@media screen and (max-width: 600px) {
+    .suggestionContainer {
+        grid-template-columns: repeat(1, 0.9fr);
+    }
+    .searchForm {
+        padding-top: 20vh;
+    }
+}
